@@ -11,7 +11,6 @@ const Login = ({submitFunction}) =>{
             ...data,
             [field]:event.target.value
         });
-        console.log(data);
     }
     async function handleOnClick(event) {
         event.preventDefault();
@@ -20,7 +19,7 @@ const Login = ({submitFunction}) =>{
             const usersData = await response.json();
         
             const user = usersData.find(userApi => data.email === userApi.email);
-            console.log(user);
+            
             if(!user){
                 submitFunction('Error: el usuario no existe');
                 return;
@@ -37,13 +36,13 @@ const Login = ({submitFunction}) =>{
 
     return(
         <div>
-            <form>
+            <form onSubmit={handleOnClick}>
                 <label>Email:</label>
                 <input type='email' onChange={(event => handleOnChange(event, 'email'))}/>
                 <label>Password:</label>
                 <input type='text' onChange={(event => handleOnChange(event, 'password'))}/>
 
-                <button onClick={handleOnClick}>Send</button>
+                <button type='submit'>Send</button>
             </form>
         </div>
     )
