@@ -1,0 +1,22 @@
+#mensaje {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    height: 50px;
+    background-color:  #f9f0ffa3;
+    border-radius: 10px;
+}
+
+#mensaje h1 {
+    color: #007bff;
+    font-size: 24px;
+}
+
+/* Estilos adicionales para manejar errores o éxito */
+#mensaje.success h1 {
+    color: green;
+}
+
+#mensaje.error h1 {
+    color: rgb(141, 12, 81);
+}
